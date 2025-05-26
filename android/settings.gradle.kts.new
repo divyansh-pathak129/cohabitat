@@ -1,0 +1,18 @@
+// Include this in your settings.gradle.kts file
+pluginManagement {
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "cohabitat"
+include(":app")

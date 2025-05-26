@@ -8,15 +8,14 @@ plugins {
 android {
     namespace = "com.cohabitat.cohabitat"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
-
+    
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -28,6 +27,10 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // Auth0 callback configuration
+        manifestPlaceholders["auth0Domain"] = "cohabitat.us.auth0.com"
+        manifestPlaceholders["auth0Scheme"] = "com.cohabitat.cohabitat"
     }
 
     buildTypes {
